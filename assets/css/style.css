@@ -1,0 +1,49 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    /* background-color: #343a40; */
+}
+
+
+/* Banner Section */
+.jumbotron {
+    background: url('../images/computer1.png') center no-repeat;
+    background-size: cover;
+    color: rgb(9, 10, 9);
+    /* text-shadow: 1px 1px 2px black; */
+}
+
+/* Featured Products */
+.card {
+    margin: 15px;
+}
+
+/* Product Images */
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Contact Form */
+.contact-form {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Utility Styles */
+.text-center {
+    text-align: center;
+}
