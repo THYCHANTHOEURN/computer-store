@@ -1,12 +1,14 @@
 /* script.js */
 $(document).ready(function () {
-    // Smooth scroll for navigation links
-    $('a.nav-link').click(function () {
-        var target = $(this).attr('href');
-        $('html, body').animate({
-            scrollTop: $(target).offset().top
-        }, 1000);
-        return false;
+    // Smooth scrolling for links
+    $('a[href^="#"]').on('click', function (event) {
+        const target = $(this.getAttribute('href'));
+        if (target.length) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 1000);
+        }
     });
 
     // Shopping cart script
@@ -15,8 +17,9 @@ $(document).ready(function () {
     });
 
     // Form submission alert
-    $('form').submit(function () {
+    $('form').submit(function (event) {
+        event.preventDefault();
         alert("Message sent successfully!");
-        return false;
+        // Add your form submission logic here
     });
 });

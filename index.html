@@ -5,24 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Store</title>
+    <meta name="description" content="Welcome to our Computer Store. We provide high-quality computer products for over a decade.">
+    <meta name="keywords" content="Computer, Store, Laptops, Desktops, Accessories">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- jQuery -->
-    <script src="plugins/jquery/jquery-3.7.1.min.js"></script>
+    <script src="plugins/jquery/jquery-3.7.1.min.js" defer></script>
     <!-- Bootstrap JS -->
-    <script src="plugins/bootstrap/bootstrap.min.css"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Computer Store</a>
-            <div class="collapse navbar-collapse">
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Computer Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
@@ -34,114 +40,107 @@
         </nav>
     </header>
 
-    <!-- Banner Section -->
-    <section class="jumbotron text-center">
-        <h1 class="display-4">Welcome to Computer Store!</h1>
-        <p class="lead">Find the best deals on laptops, desktops, and accessories!</p>
-        <a href="products.html" class="btn btn-primary btn-lg">Shop Now</a>
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center text-center bg-dark text-white">
+        <div class="container">
+            <h1>Welcome to Our Computer Store</h1>
+            <p>Providing high-quality computer products for over a decade</p>
+            <a href="products.html" class="btn btn-primary btn-lg mt-4">Shop Now</a>
+        </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="container">
-        <h2 class="text-center my-4">Featured Products</h2>
+    <!-- Main Content -->
+    <section class="container my-5">
+        <h2 class="text-center">Our Products</h2>
         <div class="row">
-
-            <!-- Example Product Card -->
-            <div class="col-md-3">
+            <!-- Product Card 1 -->
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="assets/images/products/product1.jpg" class="card-img-top" alt="Product Image">
+                    <img src="assets/images/products/product1.jpg" class="card-img-top" alt="Product 1">
                     <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">High-performance laptop with latest specifications.</p>
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Repeat for other products -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/images/products/product2.jpg" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">High-performance laptop with latest specifications.</p>
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/images/products/product3.jpg" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">High-performance laptop with latest specifications.</p>
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="assets/images/products/product4.jpg" class="card-img-top" alt="Product 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 4</h5>
+                        <p class="card-text">High-performance laptop with latest specifications.</p>
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="assets/images/products/product2.jpg" class="card-img-top" alt="Product Image">
+                    <img src="assets/images/products/product1.jpg" class="card-img-top" alt="Product 5">
                     <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
+                        <h5 class="card-title">Product 5</h5>
+                        <p class="card-text">High-performance laptop with latest specifications.</p>
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="assets/images/products/product3.jpg" class="card-img-top" alt="Product Image">
+                    <img src="assets/images/products/product2.jpg" class="card-img-top" alt="Product 6">
                     <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
+                        <h5 class="card-title">Product 6</h5>
+                        <p class="card-text">High-performance laptop with latest specifications.</p>
+                        <a href="#" class="btn btn-outline-primary">View Details</a>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/images/products/product4.jpg" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/images/products/product1.jpg" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/images/products/product2.jpg" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/images/products/product3.jpg" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="assets/images/products/product4.jpg" class="card-img-top" alt="Product Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Laptop XYZ</h5>
-                        <p class="card-text">$799.99</p>
-                        <a href="#" class="btn btn-success">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Repeat similar product cards -->
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Computer Store. All rights reserved.</p>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Computer Store</h5>
+                    <p>&copy; 2024 Computer Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js" defer></script>
 </body>
 
 </html>

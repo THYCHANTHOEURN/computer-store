@@ -4,27 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Store</title>
+    <title>Contact Us - Computer Store</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- contact page specific style -->
     <link rel="stylesheet" href="assets/css/contact.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- jQuery -->
     <script src="plugins/jquery/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="plugins/bootstrap/bootstrap.min.css"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Computer Store</a>
-            <div class="collapse navbar-collapse">
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Computer Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
@@ -36,22 +40,31 @@
         </nav>
     </header>
 
-    <section class="container">
-        <h2 class="text-center my-4">Contact Us</h2>
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center text-center bg-dark text-white">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="container my-5">
+        <h2 class="text-center">Get in Touch</h2>
         <div class="row">
             <div class="col-md-6">
-                <form>
+                <form id="contactForm"></form>
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
@@ -61,14 +74,38 @@
                 <p>1234 Street, City, Country</p>
                 <!-- Embed Google Maps here -->
                 <iframe src="https://maps.google.com/maps?q=37.7749,-122.4194&z=15&output=embed" width="100%"
-                    height="300"></iframe>
+                    height="300" aria-label="Store Location"></iframe>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Computer Store. All rights reserved.</p>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Computer Store</h5>
+                    <p>&copy; 2024 Computer Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message!');
+        });
+    </script>
 </body>
+
+</html>

@@ -4,28 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Providing high-quality computer products and services for over a decade.">
+    <meta property="og:title" content="About Us - Computer Store">
+    <meta property="og:description" content="Providing high-quality computer products and services for over a decade.">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="og:url" content="https://www.computerstore.com/about.html">
     <title>Computer Store</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
     <!-- Custom CSS -->
-    <!-- general style -->
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- about page specific style -->
     <link rel="stylesheet" href="assets/css/about.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- jQuery -->
     <script src="plugins/jquery/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap JS -->
-    <script src="plugins/bootstrap/bootstrap.min.css"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Computer Store</a>
-            <div class="collapse navbar-collapse">
+    <header class="fixed-top" role="banner">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Computer Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
@@ -37,32 +45,60 @@
         </nav>
     </header>
 
-    <section class="container">
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex align-items-center text-center bg-dark text-white" role="region" aria-label="Hero Section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Providing high-quality computer products and services for over a decade</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="container my-5" role="main">
         <h2 class="text-center my-4">About Us</h2>
         <p class="text-center">Welcome to our computer store! We have been providing high-quality computer products and services for over a
             decade.</p>
         <h3 class="text-center my-4">Our Team</h3>
         <div class="row">
             <div class="col-md-4 team-member">
-                <img src="assets/images/teams/team1.jpg" class="img-fluid rounded-circle" alt="Team Member">
+                <img src="assets/images/teams/team1.jpg" class="img-fluid rounded-circle" alt="Team Member" loading="lazy">
                 <h4 class="text-center">John Doe</h4>
                 <p class="text-center">Founder & CEO</p>
             </div>
             <div class="col-md-4 team-member">
-                <img src="assets/images/teams/team2.jpg" class="img-fluid rounded-circle" alt="Team Member">
+                <img src="assets/images/teams/team2.jpg" class="img-fluid rounded-circle" alt="Team Member" loading="lazy">
                 <h4 class="text-center">Michael Brown</h4>
                 <p class="text-center">Chief Technology Officer</p>
             </div>
             <div class="col-md-4 team-member">
-                <img src="assets/images/teams/team3.jpg" class="img-fluid rounded-circle" alt="Team Member">
+                <img src="assets/images/teams/team3.jpg" class="img-fluid rounded-circle" alt="Team Member" loading="lazy">
                 <h4 class="text-center">Emily Johnson</h4>
                 <p class="text-center">Head of Marketing</p>
             </div>
-            <!-- Repeat similar team members -->
         </div>
     </section>
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Computer Store. All rights reserved.</p>
+    <footer class="bg-dark text-white py-4" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Computer Store</h5>
+                    <p>&copy; 2024 Computer Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
 </body>
+
+</html>

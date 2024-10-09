@@ -1,13 +1,44 @@
-/* style.css */
+/* Define primary colors */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --light-bg: #f8f9fa;
+}
+
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
 }
 
 /* Navbar Styles */
 .navbar {
-    /* background-color: #343a40; */
+    border-bottom: 1px solid var(--light-bg);
 }
 
+.navbar-brand {
+    font-weight: bold;
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+#hero {
+    height: 60vh;
+    background: url('../images/hero-bg.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+#hero h1, #hero p {
+    color: white;
+}
+
+#hero .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
 
 /* Banner Section */
 .jumbotron {
@@ -37,8 +68,8 @@ body {
 
 /* Footer */
 footer {
-    background-color: #343a40;
-    color: white;
+    background-color: var(--text-color);
+    color: var(--light-bg);
     text-align: center;
     padding: 20px 0;
 }
