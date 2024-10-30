@@ -15,24 +15,22 @@ body {
 }
 
 /* Navbar Styles */
-.navbar {
-    border-bottom: 1px solid var(--light-bg);
+header {
+    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,123,255,0.8) 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-brand {
-    font-weight: bold;
-    color: var(--background-color) !important;
+.navbar-nav .nav-link {
+    margin: 0 10px;
+    font-size: 1.1rem;
+    transition: color 0.3s, background-color 0.3s;
 }
 
-.nav-link {
-    font-weight: bold;
-    color: var(--text-color) !important;
-    margin-left: 20px;
-}
-
-.nav-link.active, .nav-link:hover {
-    background-color: #e7e7e7;
-    border-radius: 10px;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 /* Hero Section */
@@ -49,19 +47,31 @@ body {
 #hero .btn-primary {
     background-color: var(--primary-color);
     border: none;
+    font-size: 1.25rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Banner Section */
-.jumbotron {
-    background: url('../images/computer1.png') center no-repeat;
-    background-size: cover;
-    color: rgb(9, 10, 9);
-    /* text-shadow: 1px 1px 2px black; */
+#hero .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
-/* Featured Products */
+/* Product Listings */
 .card {
     margin: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 /* Product Images */
@@ -70,49 +80,7 @@ body {
     object-fit: cover;
 }
 
-/*
-* pagiantion styles
-*
-*/ 
-.pagination .page-item .page-link {
-    color: #007bff; /* Bootstrap primary color */
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #007bff; /* Bootstrap primary color */
-    border-color: #007bff; /* Bootstrap primary color */
-    color: white;
-}
-
-.pagination .page-item .page-link:hover {
-    background-color: #0056b3; /* Darker shade of Bootstrap primary color */
-    border-color: #0056b3; /* Darker shade of Bootstrap primary color */
-    color: white;
-}
-
-/* Contact Form */
-.contact-form {
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Footer */
-footer {
-    background-color: var(--text-color);
-    color: var(--light-bg);
-    text-align: center;
-    padding: 20px 0;
-}
-
-/* Utility Styles */
-.text-center {
-    text-align: center;
-}
-
-
 /* Pagination Styles */
-
 .pagination {
     margin-top: 20px;
     display: flex;
@@ -154,4 +122,26 @@ footer {
     border-color: #dee2e6; /* Disabled border color */
     pointer-events: none;
     cursor: not-allowed;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: var(--light-bg);
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+footer .list-inline-item a {
+    color: #adb5bd;
+    transition: color 0.3s;
+}
+
+footer .list-inline-item a:hover {
+    color: #fff;
 }
