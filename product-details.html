@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Computer Store</title>
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Detailed information about our products.">
+    <meta name="keywords" content="computers, laptops, desktops, accessories, product details">
+    <meta name="author" content="Computer Store">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--product details specific style-->
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery-3.7.1.min.js" defer></script>
+    <!-- Bootstrap JS -->
+    <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-info">
+            <a class="navbar-brand" href="index.html">Computer Store</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="container my-5 pt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="assets/images/products/product1.jpg" class="img-fluid" alt="Product Image">
+            </div>
+            <div class="col-md-6">
+                <h2>Product Name</h2>
+                <p class="text-muted">Category: Laptops</p>
+                <p class="lead">Price: $999.99</p>
+                <p>Product description goes here. It provides detailed information about the product, its features,
+                    specifications, and benefits.</p>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Computer Store</h5>
+                    <p>&copy; 2024 Computer Store. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
+                        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+        /**
+         * Script for product details page.
+         * 
+         * 
+         */
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+
+            // Fetch product details based on productId
+            // This is a placeholder. Replace with actual data fetching logic.
+            const productDetails = {
+                1: {
+                    name: 'Product 1',
+                    category: 'Laptops',
+                    price: '$999.99',
+                    description: 'High-performance laptop with latest specifications.',
+                    image: 'assets/images/products/product1.jpg'
+                },
+                2: {
+                    name: 'Product 2',
+                    category: 'Desktops',
+                    price: '$799.99',
+                    description: 'Powerful desktop with cutting-edge technology.',
+                    image: 'assets/images/products/product2.jpg'
+                },
+                3: {
+                    name: 'Product 3',
+                    category: 'Accessories',
+                    price: '$49.99',
+                    description: 'Essential accessories for your computer setup.',
+                    image: 'assets/images/products/product3.jpg'
+                },
+                4: {
+                    name: 'Product 4',
+                    category: 'Accessories',
+                    price: '$49.99',
+                    description: 'Essential accessories for your computer setup.',
+                    image: 'assets/images/products/product4.jpg'
+                }
+            };
+
+            const product = productDetails[productId];
+            if (product) {
+                document.querySelector('h2').textContent = product.name;
+                document.querySelector('.text-muted').textContent = `Category: ${product.category}`;
+                document.querySelector('.lead').textContent = `Price: ${product.price}`;
+                document.querySelector('p').textContent = product.description;
+                document.querySelector('img').src = product.image;
+            } else {
+                // Handle product not found
+                document.querySelector('h2').textContent = 'Product Not Found';
+                document.querySelector('.text-muted').textContent = '';
+                document.querySelector('.lead').textContent = '';
+                document.querySelector('p').textContent = 'The product you are looking for does not exist.';
+                document.querySelector('img').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

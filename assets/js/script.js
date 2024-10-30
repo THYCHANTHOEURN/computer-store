@@ -29,54 +29,6 @@ $(document).ready(function () {
  * Script for  pagination navigation.
  * 
  */
-// document.addEventListener('DOMContentLoaded', function () {
-//     const productsPerPage = 9;
-//     const productList = document.getElementById('product-list');
-//     const products = Array.from(productList.getElementsByClassName('col-md-4'));
-//     const pagination = document.getElementById('pagination');
-
-//     function showPage(page) {
-//         const start = (page - 1) * productsPerPage;
-//         const end = start + productsPerPage;
-
-//         products.forEach((product, index) => {
-//             if (index >= start && index < end) {
-//                 product.style.display = 'block';
-//             } else {
-//                 product.style.display = 'none';
-//             }
-//         });
-//     }
-
-//     function setupPagination() {
-//         const pageCount = Math.ceil(products.length / productsPerPage);
-//         pagination.innerHTML = '';
-
-//         for (let i = 1; i <= pageCount; i++) {
-//             const li = document.createElement('li');
-//             li.className = 'page-item';
-//             li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
-//             li.addEventListener('click', (e) => {
-//                 e.preventDefault();
-//                 showPage(i);
-//                 document.querySelectorAll('.page-item').forEach(item => item.classList.remove('active'));
-//                 li.classList.add('active');
-//             });
-//             pagination.appendChild(li);
-//         }
-
-//         if (pagination.firstChild) {
-//             pagination.firstChild.classList.add('active');
-//         }
-//     }
-
-//     if (products.length > productsPerPage) {
-//         showPage(1);
-//         setupPagination();
-//     }
-// });
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const productsPerPage = 9;
     const productList = document.getElementById('product-list');
@@ -176,3 +128,4 @@ document.addEventListener('DOMContentLoaded', function () {
         setupPagination();
     }
 });
+
