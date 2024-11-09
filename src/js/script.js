@@ -1,4 +1,9 @@
 /* script.js */
+
+/**
+ * Jquery code for smooth scrolling, shopping cart and form submission.
+ *
+ */
 $(document).ready(function () {
     // Smooth scrolling for links
     $('a[href^="#"]').on('click', function (event) {
@@ -27,6 +32,8 @@ $(document).ready(function () {
 
 /**
  * Script for  pagination navigation.
+ * 
+ * JavaScript code to implement pagination on the product list page.
  * 
  */
 document.addEventListener('DOMContentLoaded', function () {
