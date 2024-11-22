@@ -29,7 +29,8 @@
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">
-                <img src="../images/logo.png" alt="Computer Store Logo" height="60" style="padding: 5px; border-radius: 50%;">
+                <img src="../images/logo.png" alt="Computer Store Logo" height="60"
+                    style="padding: 5px; border-radius: 50%;">
                 Computer Store
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -49,17 +50,16 @@
     </header>
 
     <!-- Product Details Section -->
-    <section class="container my-5 pt-5" aria-label="Product Details Section">
+    <section class="container mt-5 pt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="../images/products/product1.jpg" class="img-fluid product-image" alt="Product Image">
+                <img src="" alt="Product Image" class="img-fluid product-image">
             </div>
             <div class="col-md-6">
-                <h2>Product Name</h2>
-                <p class="text-muted">Category: Laptops</p>
-                <p class="lead">Price: $999.99</p>
-                <p class="product-description">Product description goes here. It provides detailed information about the product, its features,
-                    specifications, and benefits.</p>
+                <h2></h2>
+                <p class="text-muted"></p>
+                <p class="lead"></p>
+                <p class="product-description"></p>
                 <button class="btn btn-primary" aria-label="Add to Cart">
                     <i class="fas fa-cart-plus"></i> Add to Cart
                 </button>
@@ -90,47 +90,24 @@
     <script src="../js/script.js" defer></script>
 
     <script>
-
-        /**
-         * Script for product details page.
-         * Fetches product details based on productId from URL query parameter.
-         * 
-         */
         document.addEventListener('DOMContentLoaded', function () {
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
 
-            // Fetch product details based on productId
-            // This is a placeholder. Replace with actual data fetching logic.
             const productDetails = {
-                1: {
-                    name: 'Product 1',
-                    category: 'Laptops',
-                    price: '$999.99',
-                    description: 'High-performance laptop with latest specifications.',
-                    image: '../images/products/product1.jpg'
-                },
-                2: {
-                    name: 'Product 2',
-                    category: 'Desktops',
-                    price: '$799.99',
-                    description: 'Powerful desktop with cutting-edge technology.',
-                    image: '../images/products/product2.jpg'
-                },
-                3: {
-                    name: 'Product 3',
-                    category: 'Accessories',
-                    price: '$49.99',
-                    description: 'Essential accessories for your computer setup.',
-                    image: '../images/products/product3.jpg'
-                },
-                4: {
-                    name: 'Product 4',
-                    category: 'Accessories',
-                    price: '$49.99',
-                    description: 'Essential accessories for your computer setup.',
-                    image: '../images/products/product4.jpg'
-                }
+                1: { name: 'Product 1', category: 'Laptops', price: '$999.99', description: 'High-performance laptop with latest specifications.', image: '../images/products/product1.jpg' },
+                2: { name: 'Product 2', category: 'Desktops', price: '$799.99', description: 'Powerful desktop with cutting-edge technology.', image: '../images/products/product2.jpg' },
+                3: { name: 'Product 3', category: 'Accessories', price: '$49.99', description: 'Essential accessories for your computer setup.', image: '../images/products/product3.jpg' },
+                4: { name: 'Product 4', category: 'Laptops', price: '$1199.99', description: 'Premium laptop with advanced features.', image: '../images/products/product4.jpg' },
+                5: { name: 'Product 5', category: 'Desktops', price: '$699.99', description: 'Budget-friendly desktop for everyday use.', image: '../images/products/product1.jpg' },
+                6: { name: 'Product 6', category: 'Accessories', price: '$29.99', description: 'Stylish accessories to enhance your computer setup.', image: '../images/products/product2.jpg' },
+                7: { name: 'Product 7', category: 'Laptops', price: '$899.99', description: 'Lightweight laptop for work and entertainment.', image: '../images/products/product3.jpg' },
+                8: { name: 'Product 8', category: 'Desktops', price: '$899.99', description: 'Powerful desktop for gaming and multimedia.', image: '../images/products/product4.jpg' },
+                9: { name: 'Product 9', category: 'Accessories', price: '$19.99', description: 'Useful accessories for your computer needs.', image: '../images/products/product1.jpg' },
+                10: { name: 'Product 10', category: 'Laptops', price: '$1099.99', description: 'Versatile laptop for work and entertainment.', image: '../images/products/product2.jpg' },
+                11: { name: 'Product 11', category: 'Desktops', price: '$999.99', description: 'All-in-one desktop for home and office use.', image: '../images/products/product3.jpg' },
+                12: { name: 'Product 12', category: 'Accessories', price: '$39.99', description: 'Premium accessories for your computer setup.', image: '../images/products/product4.jpg' },
+                // Add more dummy products as needed
             };
 
             const product = productDetails[productId];
@@ -141,7 +118,6 @@
                 document.querySelector('.product-description').textContent = product.description;
                 document.querySelector('.product-image').src = product.image;
             } else {
-                // Handle product not found
                 document.querySelector('h2').textContent = 'Product Not Found';
                 document.querySelector('.text-muted').textContent = '';
                 document.querySelector('.lead').textContent = '';
