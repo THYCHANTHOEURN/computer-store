@@ -39,7 +39,11 @@
                     <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            Cart <span id="cart-count" class="badge badge-pill badge-primary">0</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -130,6 +134,14 @@
                 `;
                 productList.innerHTML += productCard;
             });
+
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
+                document.getElementById('cart-count').textContent = cartCount;
+            }
+
+            updateCartCount();
         });
     </script>
 </body>

@@ -27,6 +27,8 @@ $(document).ready(function () {
         alert("Message sent successfully!");
         // Add your form submission logic here
     });
+
+    updateCartCount();
 });
 
 
@@ -134,5 +136,13 @@ document.addEventListener('DOMContentLoaded', function () {
         showPage(1);
         setupPagination();
     }
+
+    updateCartCount();
 });
+
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
+    document.getElementById('cart-count').textContent = cartCount;
+}
 

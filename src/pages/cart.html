@@ -70,6 +70,12 @@
                 </tr>
                 <!-- Repeat for other products -->
             </tbody>
+            <!-- Add this section -->
+            <tbody id="empty-cart-message" style="display: none;">
+                <tr>
+                    <td colspan="5" class="text-center">Your cart is empty.</td>
+                </tr>
+            </tbody>
         </table>
         <div class="text-right">
             <h3>Total: <span id="grand-total">$799.99</span></h3>
@@ -100,6 +106,33 @@
 
     <script>
         $(document).ready(function () {
+            function loadCart() {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartItems = $('#cart-items');
+                const emptyCartMessage = $('#empty-cart-message');
+                cartItems.html('');
+
+                if (cart.length === 0) {
+                    emptyCartMessage.show();
+                } else {
+                    emptyCartMessage.hide();
+                    cart.forEach(product => {
+                        const cartItem = `
+                            <tr>
+                                <td>${product.name}</td>
+                                <td class="price">$${product.price}</td>
+                                <td><input type="number" value="${product.quantity}" class="form-control quantity" min="1" data-id="${product.id}"></td>
+                                <td class="total">$${(parseFloat(product.price.substring(1)) * product.quantity).toFixed(2)}</td>
+                                <td><button class="btn btn-danger remove-item" data-id="${product.id}" aria-label="Remove item from cart"><i class="fas fa-trash-alt"></i> Remove</button></td>
+                            </tr>
+                        `;
+                        cartItems.append(cartItem);
+                    });
+                }
+
+                updateTotal();
+            }
+
             function updateTotal() {
                 let grandTotal = 0;
                 $('#cart-items tr').each(function () {
@@ -112,16 +145,24 @@
                 $('#grand-total').text('$' + grandTotal.toFixed(2));
             }
 
-            $('.quantity').on('change', function () {
+            $('#cart-items').on('change', '.quantity', function () {
+                const productId = $(this).data('id');
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const product = cart.find(p => p.id == productId);
+                product.quantity = parseInt($(this).val());
+                localStorage.setItem('cart', JSON.stringify(cart));
                 updateTotal();
             });
 
-            $('.remove-item').on('click', function () {
-                $(this).closest('tr').remove();
-                updateTotal();
+            $('#cart-items').on('click', '.remove-item', function () {
+                const productId = $(this).data('id');
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart = cart.filter(p => p.id != productId);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
             });
 
-            updateTotal();
+            loadCart(); // Load cart items when the page is loaded
         });
     </script>
 </body>
