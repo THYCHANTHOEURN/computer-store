@@ -9,26 +9,30 @@
 
 /* Global Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: var(--text-color);
     background-color: var(--background-color);
+    line-height: 1.6;
 }
 
 /* Navbar Styles */
 header {
-    background: linear-gradient(90deg, rgba(0,123,255,1) 0%, rgba(0,123,255,0.8) 100%);
+    background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
 }
 
 .navbar-nav .nav-link {
     margin: 0 10px;
     font-size: 1.1rem;
     transition: color 0.3s, background-color 0.3s;
+    color: var(--primary-color); /* Updated color */
+    padding: 5px 10px;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-    color: #fff;
+    color: #007bff;
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
@@ -38,14 +42,27 @@ header {
     height: 60vh;
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     position: relative;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-#hero h1, #hero p {
-    color: white;
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #333;
 }
 
 #hero .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #007bff;
     border: none;
     font-size: 1.25rem;
     padding: 10px 20px;
@@ -62,6 +79,8 @@ header {
 .card {
     margin: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -126,10 +145,11 @@ header {
 
 /* Footer */
 footer {
-    background-color: var(--text-color);
-    color: var(--light-bg);
+    background-color: var(--secondary-color); /* Updated color */
+    color: var(--light-bg); /* Updated color */
     text-align: center;
     padding: 20px 0;
+    font-size: 0.875rem;
 }
 
 footer h5 {

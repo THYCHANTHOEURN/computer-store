@@ -1,8 +1,10 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 1000px;
+    min-height: 100vh; /* Ensure the body takes full viewport height */
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
 }
 
 main {
@@ -10,8 +12,10 @@ main {
 }
 
 footer {
-    background-color: #343a40;
-    color: white;
+    background-color: #222;
+    color: #bbb;
     padding: 16px 0;
     text-align: center;
+    font-size: 0.875rem;
+    margin-top: auto; /* Ensure footer is pushed to the bottom */
 }
