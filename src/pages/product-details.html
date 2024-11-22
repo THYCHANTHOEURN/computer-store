@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - Computer Store</title>
-    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
     <!-- SEO Meta Tags -->
     <meta name="description" content="Detailed information about our products.">
     <meta name="keywords" content="computers, laptops, desktops, accessories, product details">
@@ -22,7 +22,6 @@
     <script src="../../plugins/jquery/jquery-3.7.1.js" defer></script>
     <!-- Bootstrap JS -->
     <script src="../../plugins/bootstrap/bootstrap.min.js" defer></script>
-    <link rel="stylesheet" href="../css/custom.css">
 </head>
 
 <body>
@@ -30,7 +29,7 @@
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">
-                <img src="../images/logo.png" alt="Computer Store Logo" height="30">
+                <img src="../images/logo.png" alt="Computer Store Logo" height="60" style="padding: 5px; border-radius: 50%;">
                 Computer Store
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -50,18 +49,20 @@
     </header>
 
     <!-- Product Details Section -->
-    <section class="container my-5 pt-5">
+    <section class="container my-5 pt-5" aria-label="Product Details Section">
         <div class="row">
             <div class="col-md-6">
-                <img src="../images/products/product1.jpg" class="img-fluid" alt="Product Image">
+                <img src="../images/products/product1.jpg" class="img-fluid product-image" alt="Product Image">
             </div>
             <div class="col-md-6">
                 <h2>Product Name</h2>
                 <p class="text-muted">Category: Laptops</p>
                 <p class="lead">Price: $999.99</p>
-                <p>Product description goes here. It provides detailed information about the product, its features,
+                <p class="product-description">Product description goes here. It provides detailed information about the product, its features,
                     specifications, and benefits.</p>
-                <button class="btn btn-primary">Add to Cart</button>
+                <button class="btn btn-primary" aria-label="Add to Cart">
+                    <i class="fas fa-cart-plus"></i> Add to Cart
+                </button>
             </div>
         </div>
     </section>
@@ -137,15 +138,15 @@
                 document.querySelector('h2').textContent = product.name;
                 document.querySelector('.text-muted').textContent = `Category: ${product.category}`;
                 document.querySelector('.lead').textContent = `Price: ${product.price}`;
-                document.querySelector('p').textContent = product.description;
-                document.querySelector('img').src = product.image;
+                document.querySelector('.product-description').textContent = product.description;
+                document.querySelector('.product-image').src = product.image;
             } else {
                 // Handle product not found
                 document.querySelector('h2').textContent = 'Product Not Found';
                 document.querySelector('.text-muted').textContent = '';
                 document.querySelector('.lead').textContent = '';
-                document.querySelector('p').textContent = 'The product you are looking for does not exist.';
-                document.querySelector('img').style.display = 'none';
+                document.querySelector('.product-description').textContent = 'The product you are looking for does not exist.';
+                document.querySelector('.product-image').style.display = 'none';
             }
         });
     </script>

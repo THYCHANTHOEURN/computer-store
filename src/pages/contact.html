@@ -18,6 +18,7 @@
     <!-- Bootstrap JS -->
     <script src="../../plugins/bootstrap/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../css/custom.css">
+    <link rel="icon" href="../images/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">
-                <img src="../images/logo.png" alt="Computer Store Logo" height="30">
+                <img src="../images/logo.png" alt="Computer Store Logo" height="60" style="padding: 5px; border-radius: 50%;">
                 Computer Store
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -45,7 +46,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="d-flex align-items-center text-center bg-light text-dark">
+    <section id="hero" class="d-flex align-items-center text-center bg-light text-dark" aria-label="Hero Section">
         <div class="container">
             <h1>Contact Us</h1>
             <p>We'd love to hear from you</p>
@@ -70,7 +71,9 @@
                         <label for="message">Message</label>
                         <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
                 </form>
             </div>
             <div class="col-md-6">
