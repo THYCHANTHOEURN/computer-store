@@ -14,14 +14,12 @@
     <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/style.css">
-    <!-- products page specific style -->
-    <link rel="stylesheet" href="../css/custom.css">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery-3.7.1.js" defer></script>
+    <script src="../../plugins/jquery/jquery-3.7.1.js"></script>
     <!-- Bootstrap JS -->
-    <script src="../../plugins/bootstrap/bootstrap.min.js" defer></script>
+    <script src="../../plugins/bootstrap/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -36,8 +34,8 @@
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -141,7 +139,10 @@
                                     <h5 class="card-title">${product.name}</h5>
                                     <p class="card-text">${product.description}</p>
                                     <p class="card-text"><strong>Price: ${product.price}</strong></p>
-                                    <a href="product-details.html?id=${product.id}" class="btn btn-primary" aria-label="View details of ${product.name}">
+                                    <button class="btn btn-primary add-to-cart" data-id="${product.id}" aria-label="Add ${product.name} to cart">
+                                        <i class="fas fa-cart-plus"></i> Add to Cart
+                                    </button>
+                                    <a href="product-details.html?id=${product.id}" class="btn btn-secondary" aria-label="View details of ${product.name}">
                                         <i class="fas fa-info-circle"></i> View Details
                                     </a>
                                 </div>
@@ -173,7 +174,45 @@
             categoryFilter.addEventListener('change', filterProducts);
             priceSort.addEventListener('change', filterProducts);
 
+            productList.addEventListener('click', function (event) {
+                if (event.target.classList.contains('add-to-cart')) {
+                    const productId = event.target.getAttribute('data-id');
+                    addToCart(productId);
+                }
+            });
+
+            function addToCart(productId) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const product = products.find(p => p.id == productId);
+                const existingProduct = cart.find(p => p.id == productId);
+
+                if (existingProduct) {
+                    existingProduct.quantity += 1;
+                } else {
+                    product.quantity = 1;
+                    cart.push(product);
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${product.name} has been added to your cart.`);
+                updateCartCount();
+            }
+
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
+                document.getElementById('cart-count').textContent = cartCount;
+            }
+
             renderProducts(products);
+            updateCartCount();
+
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+
+            navbarToggler.addEventListener('click', function () {
+                navbarCollapse.classList.toggle('show');
+            });
         });
     </script>
 </body>
