@@ -292,3 +292,9 @@ footer .contact-details {
     margin-top: 1rem;
     font-size: 0.875rem;
 }
+
+/* Logo Styles */
+.logo-img {
+    border-radius: 50%;
+    margin-left: 10px;
+}
