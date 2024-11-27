@@ -2,13 +2,13 @@
 
 /* Fixed size for team member images */
 .team-member img {
-    width: 250px; /* Fixed width */
-    height: 300px; /* Fixed height */
-    object-fit: cover; /* Ensures image is scaled to fit without distortion */
-    border-radius: 10px; /* Change to rounded corners */
-    display: block; /* Centers the image */
-    margin-left: auto; /* Centers the image */
-    margin-right: auto; /* Centers the image */
+    width: 100%; /* Updated width */
+    height: auto; /* Updated height */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 768px) {
