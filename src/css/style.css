@@ -185,6 +185,28 @@ header {
     text-align: center;
 }
 
+/* Breadcrumb Styles */
+.breadcrumb {
+    background-color: var(--light-bg);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: var(--primary-color);
+}
+
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .card {
@@ -323,7 +345,7 @@ footer .contact-details {
 
 #logos .logo-wrapper {
     display: flex;
-    animation: moveLogos 20s linear infinite;
+    animation: moveLogos 30s linear infinite; /* Increased duration from 20s to 30s */
 }
 
 #logos img {
