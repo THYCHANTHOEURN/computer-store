@@ -417,3 +417,44 @@ section.container ul li i {
     height: auto;
     margin: 10px 0;
 }
+
+/* Banner Section */
+#banner {
+    margin-top: 80px; /* Adjust based on your header height */
+}
+
+#banner .carousel-item {
+    height: 70vh;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+}
+
+#banner .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+}
+
+#banner .carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+#banner .carousel-caption h5 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#banner .carousel-caption p {
+    font-size: 1.25rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Ensure controls are visible */
+    border-radius: 50%;
+}
