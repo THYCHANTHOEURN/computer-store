@@ -458,3 +458,28 @@ section.container ul li i {
     background-color: rgba(0, 0, 0, 0.5); /* Ensure controls are visible */
     border-radius: 50%;
 }
+
+/* Our Team Section */
+.team-member {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: var(--text-color);
+}

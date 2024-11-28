@@ -2,10 +2,10 @@
 
 /* Fixed size for team member images */
 .team-member img {
-    width: 100%; /* Updated width */
-    height: auto; /* Updated height */
+    width: 200px; /* Updated width */
+    height: 200px; /* Updated height */
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 50%;
     display: block;
     margin-left: auto;
     margin-right: auto;
