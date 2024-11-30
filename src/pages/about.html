@@ -44,7 +44,11 @@
                     <li class="nav-item"><a class="nav-link" href="products.html">PRODUCTS</a></li>
                     <li class="nav-item"><a class="nav-link active" href="about.html">ABOUT</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html">CART</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            CART <span id="cart-count" class="badge badge-pill badge-primary">0</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -203,6 +207,14 @@
             navbarToggler.addEventListener('click', function () {
                 navbarCollapse.classList.toggle('show');
             });
+
+            function updateCartCount() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
+                document.getElementById('cart-count').textContent = cartCount;
+            }
+
+            updateCartCount();
         });
     </script>
 </body>

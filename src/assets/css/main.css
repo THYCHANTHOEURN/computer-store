@@ -37,6 +37,15 @@ header {
     border-radius: 5px;
 }
 
+.navbar-nav .nav-link .badge {
+    background-color: #ff0000; /* Red background for visibility */
+    color: #ffffff; /* White text color */
+    font-size: 0.8rem; /* Slightly smaller font size */
+    margin-left: 5px; /* Space between text and badge */
+    padding: 5px 10px; /* Padding for better appearance */
+    border-radius: 50%; /* Circular badge */
+}
+
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
     color: #007bff;

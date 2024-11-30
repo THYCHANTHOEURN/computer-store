@@ -151,7 +151,7 @@
                                     <p class="card-text">${product.description}</p>
                                     <p class="card-text"><strong>Price: ${product.price}</strong></p>
                                     <button class="btn btn-primary add-to-cart" data-id="${product.id}" aria-label="Add ${product.name} to cart">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart
+                                        <i class="fas fa-cart-plus"></i> Add to Cart <span class="badge bg-secondary" id="cart-count-${product.id}">0</span>
                                     </button>
                                     <a href="product-details.html?id=${product.id}" class="btn btn-secondary" aria-label="View details of ${product.name}">
                                         <i class="fas fa-info-circle"></i> View Details
@@ -207,6 +207,15 @@
                 localStorage.setItem('cart', JSON.stringify(cart));
                 alert(`${product.name} has been added to your cart.`);
                 updateCartCount();
+                updateProductCartCount(productId);
+            }
+
+            function updateProductCartCount(productId) {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const product = cart.find(p => p.id == productId);
+                if (product) {
+                    document.getElementById(`cart-count-${productId}`).textContent = product.quantity;
+                }
             }
 
             function updateCartCount() {
