@@ -8,12 +8,15 @@
 $(document).ready(function () {
     // Smooth scrolling for links
     $('a[href^="#"]').on('click', function (event) {
-        const target = $(this.getAttribute('href'));
-        if (target.length) {
-            event.preventDefault();
-            $('html, body').stop().animate({
-                scrollTop: target.offset().top
-            }, 1000);
+        const targetId = $(this).attr('href');
+        if (targetId && targetId !== '#') {
+            const target = $(targetId);
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
         }
     });
 
@@ -178,4 +181,3 @@ function removeFromCart(productId) {
 function formatPrice(product) {
     return `$${parseFloat(product.price).toFixed(2)}`;
 }
-

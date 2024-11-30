@@ -26,11 +26,11 @@
     <!-- Header -->
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="#">
                 <img src="../assets/images/logo.png" alt="Computer Store Logo" height="60" class="logo-img">
                 Computer Store
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,6 +44,15 @@
                         <a class="nav-link" href="cart.html">
                             CART <span id="cart-count" class="badge badge-pill badge-primary">0</span>
                         </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            My Account
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                            <li><a class="dropdown-item" href="register.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -116,7 +125,7 @@
     </footer>
 
     <!-- Custom JS -->
-    <script src="../js/main.js" defer></script>
+    <script src="../assets/js/main.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const products = [
@@ -151,7 +160,7 @@
                                     <p class="card-text">${product.description}</p>
                                     <p class="card-text"><strong>Price: ${product.price}</strong></p>
                                     <button class="btn btn-primary add-to-cart" data-id="${product.id}" aria-label="Add ${product.name} to cart">
-                                        <i class="fas fa-cart-plus"></i> Add to Cart <span class="badge bg-secondary" id="cart-count-${product.id}">0</span>
+                                        <i class="fas fa-cart-plus"></i> Add to Cart
                                     </button>
                                     <a href="product-details.html?id=${product.id}" class="btn btn-secondary" aria-label="View details of ${product.name}">
                                         <i class="fas fa-info-circle"></i> View Details

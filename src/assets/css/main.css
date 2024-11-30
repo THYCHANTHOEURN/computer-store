@@ -53,6 +53,29 @@ header {
     border-radius: 5px;
 }
 
+/* Dropdown Menu Styles */
+.navbar-nav .dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.navbar-nav .dropdown-item {
+    color: var(--text-color);
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-nav .dropdown-item i {
+    margin-right: 10px;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 /* Hero Section */
 #hero {
     height: 70vh;
@@ -491,4 +514,46 @@ section.container ul li i {
 .team-member p {
     font-size: 1rem;
     color: var(--text-color);
+}
+
+/* Login and Registration Form Styles */
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.form-container .form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.form-container .btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+.form-container .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.form-container .btn-primary:hover {
+    background-color: #0056b3;
 }
