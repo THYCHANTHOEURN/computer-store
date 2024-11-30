@@ -2,23 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Computer Store</title>
-    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css" />
     <!-- cart page specific style -->
-    <link rel="stylesheet" href="../assets/css/cart.css">
+    <link rel="stylesheet" href="../assets/css/cart.css" />
     <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Custom JS -->
-    <script src="../js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -26,7 +28,7 @@
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">
-                <img src="../assets/images/logo.png" alt="Computer Store Logo" height="60" class="logo-img">
+                <img src="../assets/images/logo.png" alt="Computer Store Logo" height="60" class="logo-img" />
                 Computer Store
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -35,11 +37,21 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">PRODUCTS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">ABOUT</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="cart.html">CART</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">PRODUCTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cart.html">CART</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -62,14 +74,20 @@
                 <tr>
                     <td>Laptop XYZ</td>
                     <td class="price">$799.99</td>
-                    <td><input type="number" value="1" class="form-control quantity" min="1"></td>
+                    <td>
+                        <input type="number" value="1" class="form-control quantity" min="1" />
+                    </td>
                     <td class="total">$799.99</td>
-                    <td><button class="btn btn-danger remove-item" data-id="1" aria-label="Remove item from cart"><i class="fas fa-trash-alt"></i> Remove</button></td>
+                    <td>
+                        <button class="btn btn-danger remove-item" data-id="1" aria-label="Remove item from cart">
+                            <i class="fas fa-trash-alt"></i> Remove
+                        </button>
+                    </td>
                 </tr>
                 <!-- Repeat for other products -->
             </tbody>
             <!-- Add this section -->
-            <tbody id="empty-cart-message" style="display: none;">
+            <tbody id="empty-cart-message" style="display: none">
                 <tr>
                     <td colspan="5" class="text-center">Your cart is empty.</td>
                 </tr>
@@ -98,9 +116,15 @@
                 </div>
                 <div class="col-md-6 text-right">
                     <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#" class="text-white">Privacy Policy</a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white">Terms of Service</a></li>
-                        <li class="list-inline-item"><a href="#" class="text-white">Contact Us</a></li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-white">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-white">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-white">Contact Us</a>
+                        </li>
                     </ul>
                     <div class="social-icons">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -112,28 +136,34 @@
             </div>
         </div>
     </footer>
-
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
     <script>
         $(document).ready(function () {
             function loadCart() {
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const cartItems = $('#cart-items');
-                const emptyCartMessage = $('#empty-cart-message');
-                cartItems.html('');
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const cartItems = $("#cart-items");
+                const emptyCartMessage = $("#empty-cart-message");
+                cartItems.html("");
 
                 if (cart.length === 0) {
                     emptyCartMessage.show();
                 } else {
                     emptyCartMessage.hide();
-                    cart.forEach(product => {
+                    cart.forEach((product) => {
                         const price = parseFloat(product.price) || 0;
                         const cartItem = `
                             <tr>
                                 <td>${product.name}</td>
                                 <td class="price">$${price.toFixed(2)}</td>
-                                <td><input type="number" value="${product.quantity}" class="form-control quantity" min="1" data-id="${product.id}"></td>
-                                <td class="total">$${(price * product.quantity).toFixed(2)}</td>
-                                <td><button class="btn btn-danger remove-item" data-id="${product.id}" aria-label="Remove item from cart"><i class="fas fa-trash-alt"></i> Remove</button></td>
+                                <td><input type="number" value="${product.quantity
+                            }" class="form-control quantity" min="1" data-id="${product.id
+                            }"></td>
+                                <td class="total">$${(
+                                price * product.quantity
+                            ).toFixed(2)}</td>
+                                <td><button class="btn btn-danger remove-item" data-id="${product.id
+                            }" aria-label="Remove item from cart"><i class="fas fa-trash-alt"></i> Remove</button></td>
                             </tr>
                         `;
                         cartItems.append(cartItem);
@@ -145,40 +175,43 @@
 
             function updateTotal() {
                 let grandTotal = 0;
-                $('#cart-items tr').each(function () {
-                    const price = parseFloat($(this).find('.price').text().replace('$', '')) || 0;
-                    const quantity = parseInt($(this).find('.quantity').val()) || 0;
+                $("#cart-items tr").each(function () {
+                    const price =
+                        parseFloat($(this).find(".price").text().replace("$", "")) || 0;
+                    const quantity = parseInt($(this).find(".quantity").val()) || 0;
                     const total = price * quantity;
-                    $(this).find('.total').text('$' + total.toFixed(2));
+                    $(this)
+                        .find(".total")
+                        .text("$" + total.toFixed(2));
                     grandTotal += total;
                 });
-                $('#grand-total').text('$' + grandTotal.toFixed(2));
+                $("#grand-total").text("$" + grandTotal.toFixed(2));
             }
 
-            $('#cart-items').on('change', '.quantity', function () {
-                const productId = $(this).data('id');
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                const product = cart.find(p => p.id == productId);
+            $("#cart-items").on("change", ".quantity", function () {
+                const productId = $(this).data("id");
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const product = cart.find((p) => p.id == productId);
                 product.quantity = parseInt($(this).val()) || 1;
-                localStorage.setItem('cart', JSON.stringify(cart));
+                localStorage.setItem("cart", JSON.stringify(cart));
                 updateTotal();
             });
 
-            $('#cart-items').on('click', '.remove-item', function () {
-                const productId = $(this).data('id');
-                let cart = JSON.parse(localStorage.getItem('cart')) || [];
-                cart = cart.filter(p => p.id != productId);
-                localStorage.setItem('cart', JSON.stringify(cart));
+            $("#cart-items").on("click", ".remove-item", function () {
+                const productId = $(this).data("id");
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cart = cart.filter((p) => p.id != productId);
+                localStorage.setItem("cart", JSON.stringify(cart));
                 loadCart();
             });
 
             loadCart(); // Load cart items when the page is loaded
 
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            const navbarCollapse = document.querySelector('.navbar-collapse');
+            const navbarToggler = document.querySelector(".navbar-toggler");
+            const navbarCollapse = document.querySelector(".navbar-collapse");
 
-            navbarToggler.addEventListener('click', function () {
-                navbarCollapse.classList.toggle('show');
+            navbarToggler.addEventListener("click", function () {
+                navbarCollapse.classList.toggle("show");
             });
         });
     </script>
