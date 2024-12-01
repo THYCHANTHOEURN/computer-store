@@ -37,6 +37,14 @@ $(document).ready(function () {
     } else {
         console.error('Cart count element not found');
     }
+
+    // Ensure navbar toggler functionality
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    navbarToggler.addEventListener('click', function () {
+        navbarCollapse.classList.toggle('show');
+    });
 });
 
 
