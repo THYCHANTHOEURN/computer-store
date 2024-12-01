@@ -62,40 +62,42 @@
 
     <section class="container mt-5 pt-5" aria-label="Shopping Cart Section">
         <h2 class="text-center my-4">Shopping Cart</h2>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="cart-items">
-                <!-- Example Cart Item -->
-                <tr>
-                    <td>Laptop XYZ</td>
-                    <td class="price">$799.99</td>
-                    <td>
-                        <input type="number" value="1" class="form-control quantity" min="1" />
-                    </td>
-                    <td class="total">$799.99</td>
-                    <td>
-                        <button class="btn btn-danger remove-item" data-id="1" aria-label="Remove item from cart">
-                            <i class="fas fa-trash-alt"></i> Remove
-                        </button>
-                    </td>
-                </tr>
-                <!-- Repeat for other products -->
-            </tbody>
-            <!-- Add this section -->
-            <tbody id="empty-cart-message" style="display: none">
-                <tr>
-                    <td colspan="5" class="text-center">Your cart is empty.</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Example Cart Item -->
+                    <tr>
+                        <td>Laptop XYZ</td>
+                        <td class="price">$799.99</td>
+                        <td>
+                            <input type="number" value="1" class="form-control quantity" min="1" />
+                        </td>
+                        <td class="total">$799.99</td>
+                        <td>
+                            <button class="btn btn-danger remove-item" data-id="1" aria-label="Remove item from cart">
+                                <i class="fas fa-trash-alt"></i> Remove
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Repeat for other products -->
+                </tbody>
+                <!-- Add this section -->
+                <tbody id="empty-cart-message" style="display: none">
+                    <tr>
+                        <td colspan="5" class="text-center">Your cart is empty.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="text-right">
             <h3>Total: <span id="grand-total">$799.99</span></h3>
             <button class="btn btn-success" aria-label="Proceed to Checkout">

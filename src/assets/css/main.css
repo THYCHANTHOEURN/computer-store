@@ -248,17 +248,17 @@ header {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .card {
         margin: 10px;
     }
 
     .card img {
-        height: 150px;
+        height: 180px;
     }
 
     .card-title {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .navbar-nav {
@@ -267,6 +267,207 @@ header {
 
     .navbar-nav .nav-link {
         margin: 5px 0;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-container .btn {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .card img {
+        height: 150px;
+    }
+
+    .card-title {
+        font-size: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .form-container .btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        margin: 10px;
+    }
+
+    .card img {
+        height: 120px;
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        padding: 10px;
+    }
+
+    .form-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-container .btn {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card img {
+        height: 100px;
+    }
+
+    .card-title {
+        font-size: 0.8rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.8rem;
+    }
+
+    .form-container {
+        padding: 5px;
+    }
+
+    .form-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .form-container .btn {
+        font-size: 0.7rem;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1199.98px) {
+    /* xl applies to large devices (desktops, less than 1200px) */
+    .card {
+        margin: 10px;
+    }
+    .card img {
+        height: 180px;
+    }
+    .card-title {
+        font-size: 1.1rem;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+    }
+    .form-container {
+        padding: 20px;
+    }
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+    .form-container .btn {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    /* lg applies to medium devices (tablets, less than 992px) */
+    .card img {
+        height: 150px;
+    }
+    .card-title {
+        font-size: 1rem;
+    }
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+    .form-container {
+        padding: 15px;
+    }
+    .form-container h2 {
+        font-size: 1.4rem;
+    }
+    .form-container .btn {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    /* md applies to small devices (landscape phones, less than 768px) */
+    .card {
+        margin: 10px;
+    }
+    .card img {
+        height: 120px;
+    }
+    .card-title {
+        font-size: 0.9rem;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+    .form-container {
+        padding: 10px;
+    }
+    .form-container h2 {
+        font-size: 1.3rem;
+    }
+    .form-container .btn {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    /* sm applies to x-small devices (portrait phones, less than 576px) */
+    .card img {
+        height: 100px;
+    }
+    .card-title {
+        font-size: 0.8rem;
+    }
+    .navbar-nav .nav-link {
+        font-size: 0.8rem;
+    }
+    .form-container {
+        padding: 5px;
+    }
+    .form-container h2 {
+        font-size: 1.2rem;
+    }
+    .form-container .btn {
+        font-size: 0.7rem;
     }
 }
 
