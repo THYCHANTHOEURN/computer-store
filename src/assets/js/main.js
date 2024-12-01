@@ -1,7 +1,7 @@
 /* script.js */
 
 /**
- * Jquery code for smooth scrolling, shopping cart and form submission.
+ * jQuery code for smooth scrolling, shopping cart, and form submission.
  * 
  * @returns {void}
  */
@@ -32,6 +32,7 @@ $(document).ready(function () {
         // Add your form submission logic here
     });
 
+    // Update cart count if the element exists
     if ($('#cart-count').length) {
         updateCartCount();
     } else {
@@ -47,9 +48,8 @@ $(document).ready(function () {
     });
 });
 
-
 /**
- * Script for  pagination navigation.
+ * Script for pagination navigation.
  * 
  * @param {number} productsPerPage Number of products per page
  * @param {jQuery} productList jQuery object containing the product list
@@ -58,7 +58,6 @@ $(document).ready(function () {
  * @param {jQuery} products jQuery object containing the products
  * 
  * @returns {void}
- * 
  */
 $(document).ready(function () {
     const productsPerPage = 9;
@@ -71,6 +70,7 @@ $(document).ready(function () {
     const pagination = $('#pagination');
     let currentPage = 1;
 
+    // Function to show products for the current page
     function showPage(page) {
         const start = (page - 1) * productsPerPage;
         const end = start + productsPerPage;
@@ -84,10 +84,12 @@ $(document).ready(function () {
         });
     }
 
+    // Function to setup pagination controls
     function setupPagination() {
         const pageCount = Math.ceil(products.length / productsPerPage);
         pagination.html('');
 
+        // Previous button
         const prevLi = $('<li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Previous">Previous</a></li>');
         prevLi.on('click', function (e) {
             e.preventDefault();
@@ -99,6 +101,7 @@ $(document).ready(function () {
         });
         pagination.append(prevLi);
 
+        // Page number buttons
         for (let i = 1; i <= pageCount; i++) {
             const li = $(`<li class="page-item"><a class="page-link" href="javascript:void(0)">${i}</a></li>`);
             li.on('click', function (e) {
@@ -110,6 +113,7 @@ $(document).ready(function () {
             pagination.append(li);
         }
 
+        // Next button
         const nextLi = $('<li class="page-item"><a class="page-link" href="javascript:void(0)" aria-label="Next">Next</a></li>');
         nextLi.on('click', function (e) {
             e.preventDefault();
@@ -124,6 +128,7 @@ $(document).ready(function () {
         updatePagination();
     }
 
+    // Function to update pagination controls
     function updatePagination() {
         const pageItems = pagination.find('.page-item');
         pageItems.removeClass('active');
@@ -136,19 +141,27 @@ $(document).ready(function () {
         pageItems.last().toggleClass('disabled', currentPage === pageItems.length - 2);
     }
 
+    // Initialize pagination if there are more products than the products per page
     if (products.length > productsPerPage) {
         showPage(1);
         setupPagination();
     }
 
+    // Update cart count
     updateCartCount();
 
+    // Remove item from cart
     $('#cart-items').on('click', '.remove-item', function () {
         const productId = $(this).data('id');
         removeFromCart(productId); // Use the removeFromCart function
     });
 });
 
+/**
+ * Update the cart count displayed on the page.
+ * 
+ * @returns {void}
+ */
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
@@ -160,6 +173,12 @@ function updateCartCount() {
     }
 }
 
+/**
+ * Add a product to the cart.
+ * 
+ * @param {number} productId The ID of the product to add
+ * @returns {void}
+ */
 function addToCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const product = products.find(p => p.id == productId);
@@ -177,6 +196,12 @@ function addToCart(productId) {
     updateCartCount();
 }
 
+/**
+ * Remove a product from the cart.
+ * 
+ * @param {number} productId The ID of the product to remove
+ * @returns {void}
+ */
 function removeFromCart(productId) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart = cart.filter(p => p.id != productId);
@@ -185,7 +210,12 @@ function removeFromCart(productId) {
     loadCart(); // Ensure the cart is reloaded after removing an item
 }
 
-// Ensure product.price is a number
+/**
+ * Format the price of a product.
+ * 
+ * @param {Object} product The product object
+ * @returns {string} The formatted price
+ */
 function formatPrice(product) {
     return `$${parseFloat(product.price).toFixed(2)}`;
 }
