@@ -217,5 +217,5 @@ function removeFromCart(productId) {
  * @returns {string} The formatted price
  */
 function formatPrice(product) {
-    return `$${parseFloat(product.price).toFixed(2)}`;
+    return `$${parseFloat(product.price.replace('$', '')).toFixed(2)}`;
 }

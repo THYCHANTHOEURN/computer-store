@@ -165,19 +165,14 @@
                 } else {
                     emptyCartMessage.hide();
                     cart.forEach((product) => {
-                        const price = parseFloat(product.price) || 0;
+                        const price = parseFloat(product.price.replace('$', '')) || 0;
                         const cartItem = `
                             <tr>
                                 <td>${product.name}</td>
                                 <td class="price">$${price.toFixed(2)}</td>
-                                <td><input type="number" value="${product.quantity
-                            }" class="form-control quantity" min="1" data-id="${product.id
-                            }"></td>
-                                <td class="total">$${(
-                                price * product.quantity
-                            ).toFixed(2)}</td>
-                                <td><button class="btn btn-danger remove-item" data-id="${product.id
-                            }" aria-label="Remove item from cart"><i class="fas fa-trash-alt"></i> Remove</button></td>
+                                <td><input type="number" value="${product.quantity}" class="form-control quantity" min="1" data-id="${product.id}"></td>
+                                <td class="total">$${(price * product.quantity).toFixed(2)}</td>
+                                <td><button class="btn btn-danger remove-item" data-id="${product.id}" aria-label="Remove item from cart"><i class="fas fa-trash-alt"></i> Remove</button></td>
                             </tr>
                         `;
                         cartItems.append(cartItem);
