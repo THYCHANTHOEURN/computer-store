@@ -271,11 +271,17 @@
     <script src="../assets/js/main.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+
             // Import products from products.js
             const products = window.products;
 
             // Populate product list
             const productList = document.getElementById('product-list');
+
+            /**
+             * Loop through products and generate product cards.
+             * @param {Array} products - Array of product objects.
+             */
             products.forEach(product => {
                 const productCard = `
                     <!-- Product Card -->
@@ -299,7 +305,7 @@
                 productList.innerHTML += productCard;
             });
 
-            // Add to cart functionality
+            // Event listener for add-to-cart buttons
             productList.addEventListener('click', function (event) {
                 if (event.target.classList.contains('add-to-cart')) {
                     const productId = event.target.getAttribute('data-id');
@@ -307,6 +313,10 @@
                 }
             });
 
+            /**
+             * Add product to cart and update local storage.
+             * @param {string} productId - ID of the product to add to cart.
+             */
             function addToCart(productId) {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const product = products.find(p => p.id == productId);
@@ -324,12 +334,16 @@
                 updateCartCount();
             }
 
+            /**
+             * Update the cart count displayed in the navbar.
+             */
             function updateCartCount() {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
                 document.getElementById('cart-count').textContent = cartCount;
             }
 
+            // Initial cart count update
             updateCartCount();
 
             // Navbar toggler for mobile view
@@ -343,4 +357,4 @@
     </script>
 </body>
 
-</html>
+</html> 

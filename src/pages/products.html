@@ -139,7 +139,10 @@
             const categoryFilter = document.querySelector('select[aria-label="Filter by category"]');
             const priceSort = document.querySelector('select[aria-label="Sort by price"]');
 
-            // Function to render products based on filters
+            /**
+             * Render products based on the provided filtered products array.
+             * @param {Array} filteredProducts - Array of filtered product objects.
+             */
             function renderProducts(filteredProducts) {
                 productList.innerHTML = '';
                 filteredProducts.forEach(product => {
@@ -165,7 +168,9 @@
                 });
             }
 
-            // Function to filter products based on selected category and price
+            /**
+             * Filter products based on selected category and price sort order.
+             */
             function filterProducts() {
                 let filteredProducts = products;
 
@@ -196,7 +201,10 @@
                 }
             });
 
-            // Function to add product to cart
+            /**
+             * Add product to cart and update local storage.
+             * @param {string} productId - ID of the product to add to cart.
+             */
             function addToCart(productId) {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const product = products.find(p => p.id == productId);
@@ -215,7 +223,10 @@
                 updateProductCartCount(productId);
             }
 
-            // Function to update product quantity in cart
+            /**
+             * Update the quantity of a specific product in the cart.
+             * @param {string} productId - ID of the product to update quantity.
+             */
             function updateProductCartCount(productId) {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const product = cart.find(p => p.id == productId);
@@ -224,7 +235,9 @@
                 }
             }
 
-            // Function to update cart count in the navbar
+            /**
+             * Update the cart count displayed in the navbar.
+             */
             function updateCartCount() {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const cartCount = cart.reduce((total, product) => total + product.quantity, 0);

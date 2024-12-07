@@ -168,14 +168,19 @@
                 document.querySelector('.product-image').style.display = 'none';
             }
 
-            // Update cart count in the navbar
+            /**
+             * Update the cart count displayed in the navbar.
+             */
             function updateCartCount() {
                 const cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const cartCount = cart.reduce((total, product) => total + product.quantity, 0);
                 document.getElementById('cart-count').textContent = cartCount;
             }
 
-            // Add product to cart
+            /**
+             * Add product to cart and update local storage.
+             * @param {string} productId - ID of the product to add to cart.
+             */
             function addToCart(productId) {
                 let cart = JSON.parse(localStorage.getItem('cart')) || [];
                 const product = productDetails[productId];
@@ -208,4 +213,4 @@
 
 </body>
 
-</html> 
+</html>  
