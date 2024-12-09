@@ -1,4 +1,4 @@
-const products = [
+window.products = [
     { id: 1, name: 'Product 1', category: 'Laptops', price: '$999.99', description: 'High-performance laptop with latest specifications.', image: '../assets/images/products/product1.jpg' },
     { id: 2, name: 'Product 2', category: 'Desktops', price: '$799.99', description: 'Powerful desktop with cutting-edge technology.', image: '../assets/images/products/product2.jpg' },
     { id: 3, name: 'Product 3', category: 'Accessories', price: '$4.99', description: '6 In 1 Type C USB C Hub Adapter with 4K HDTV Multiport Card Reader USB3.0 TF PD SD Docking Station for PC Computer Accessories.', image: '../assets/images/products/product3.jpg' },
@@ -13,7 +13,7 @@ const products = [
     { id: 12, name: 'Product 12', category: 'Accessories', price: '$39.99', description: 'Premium accessories for your computer setup.', image: '../assets/images/products/product12.jpg' },
 ];
 
-const productDetails = {
+window.productDetails = {
     1: { name: 'Product 1', category: 'Laptops', price: '$999.99', description: 'High-performance laptop with the latest specifications, perfect for gaming, work, and entertainment. Features a powerful processor, ample storage, and a stunning display.', image: '../assets/images/products/product1.jpg' },
     2: { name: 'Product 2', category: 'Desktops', price: '$799.99', description: 'Powerful desktop with cutting-edge technology, ideal for both professional and personal use. Equipped with a high-speed processor, large memory, and advanced graphics.', image: '../assets/images/products/product2.jpg' },
     3: { name: 'Product 3', category: 'Accessories', price: '$4.99', description: '6 In 1 Type C USB C Hub Adapter with 4K HDTV Multiport Card Reader USB3.0 TF PD SD Docking Station for PC Computer Accessories. Enhance your connectivity and productivity with this versatile hub.', image: '../assets/images/products/product3.jpg' },
@@ -27,5 +27,3 @@ const productDetails = {
     11: { name: 'Product 11', category: 'Desktops', price: '$999.99', description: 'All-in-one desktop for home and office use, combining performance and convenience. Includes a large display, powerful processor, and ample storage.', image: '../assets/images/products/product11.jpg' },
     12: { name: 'Product 12', category: 'Accessories', price: '$39.99', description: 'Premium accessories for your computer setup, designed to enhance functionality and aesthetics. Includes high-quality materials and ergonomic designs.', image: '../assets/images/products/product12.jpg' },
 };
-
-export { products, productDetails };
